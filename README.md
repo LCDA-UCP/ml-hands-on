@@ -7,10 +7,13 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 
 ## Syllabus
 
-| **Module** | **Topic**                | **Lecture**      | **Exercises**    |
-|------------|--------------------------|------------------|------------------|
-| 1          | Course Introduction      | [lecture](...)   | -                |
-| 2          | ...                      | [lecture](...)   | [exercises](...) |
+| **Module** | **Topic**                                | **Lecture**                                                                     | **Exercises**                                                                      |
+|------------|------------------------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| 1          | Course Introduction + Introduction to ML | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session01) | -                                                                                  |
+| 2          | Data Preprocessing                       | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session02) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session02) |
+| 3          | ...                                      | -                                                                               | -                                                                                  |
+| 4          | ...                                      | -                                                                               | -                                                                                  |
+| 5          | ...                                      | -                                                                               | -                                                                                  |
 
 ## Setup
 
