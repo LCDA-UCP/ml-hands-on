@@ -17,11 +17,11 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 
 ## ML Package Challenges
 
-| **Issue**                                              | **Topic**             | **Development**   | **Testing**       | **Review**         |
-|--------------------------------------------------------|-----------------------|-------------------|-------------------|--------------------|
-| [#1](https://github.com/LCDA-UCP/ml-hands-on/issues/1) | Data Management + I/O | @cleopatra-santos | @D1ana-bd         | @Dacni             |
-| [#2](https://github.com/LCDA-UCP/ml-hands-on/issues/2) | Feature Selection     | @Dacni            | @cleopatra-santos | @D1ana-bd          |
-| [#3](https://github.com/LCDA-UCP/ml-hands-on/issues/3) | Clustering            | @D1ana-bd         | @Dacni            | @cleopatra-santos  |
+| **Issue**                                              | **Topic**             | **Development**   | **Testing**       | **Review**        |
+|--------------------------------------------------------|-----------------------|-------------------|-------------------|-------------------|
+| [#1](https://github.com/LCDA-UCP/ml-hands-on/issues/1) | Data Management + I/O | @cleopatra-santos | @Dacni            | @D1ana-bd         |
+| [#2](https://github.com/LCDA-UCP/ml-hands-on/issues/2) | Feature Selection     | @D1ana-bd         | @cleopatra-santos | @Dacni            |
+| [#3](https://github.com/LCDA-UCP/ml-hands-on/issues/3) | Clustering            | @Dacni            | @D1ana-bd         | @cleopatra-santos |
 
 
 ## Setup
