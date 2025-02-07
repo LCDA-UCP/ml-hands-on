@@ -15,6 +15,15 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | 4          | ...                                      | -                                                                               | -                                                                                  |
 | 5          | ...                                      | -                                                                               | -                                                                                  |
 
+## ML Package Challenges
+
+| **Issue**                                              | **Topic**             | **Development** | **Testing** | **Review** |
+|--------------------------------------------------------|-----------------------|-----------------|-------------|------------|
+| [#1](https://github.com/LCDA-UCP/ml-hands-on/issues/1) | Data Management + I/O | ...             | ...         | ...        |
+| [#2](https://github.com/LCDA-UCP/ml-hands-on/issues/2) | Feature Selection     | ...             |  ...        | ...        |
+| [#3](https://github.com/LCDA-UCP/ml-hands-on/issues/3) | Clustering            | ...             |  ...        | ...        |
+
+
 ## Setup
 
 First, clone the repository from GitHub to your local machine. You can do this by running the following command in your terminal:
