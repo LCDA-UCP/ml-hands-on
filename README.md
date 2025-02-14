@@ -7,10 +7,22 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 
 ## Syllabus
 
-| **Module** | **Topic**                | **Lecture**      | **Exercises**    |
-|------------|--------------------------|------------------|------------------|
-| 1          | Course Introduction      | [lecture](...)   | -                |
-| 2          | ...                      | [lecture](...)   | [exercises](...) |
+| **Module** | **Topic**                                | **Lecture**                                                                     | **Exercises**                                                                      |
+|------------|------------------------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| 1          | Course Introduction + Introduction to ML | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session01) | -                                                                                  |
+| 2          | Data Preprocessing                       | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session02) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session02) |
+| 3          | ...                                      | -                                                                               | -                                                                                  |
+| 4          | ...                                      | -                                                                               | -                                                                                  |
+| 5          | ...                                      | -                                                                               | -                                                                                  |
+
+## ML Package Challenges
+
+| **Issue**                                              | **Topic**             | **Development**   | **Testing**       | **Review**        |
+|--------------------------------------------------------|-----------------------|-------------------|-------------------|-------------------|
+| [#1](https://github.com/LCDA-UCP/ml-hands-on/issues/1) | Data Management + I/O | @cleopatra-santos | @Dacni            | @D1ana-bd         |
+| [#2](https://github.com/LCDA-UCP/ml-hands-on/issues/2) | Feature Selection     | @D1ana-bd         | @cleopatra-santos | @Dacni            |
+| [#3](https://github.com/LCDA-UCP/ml-hands-on/issues/3) | Clustering            | @Dacni            | @D1ana-bd         | @cleopatra-santos |
+
 
 ## Setup
 
