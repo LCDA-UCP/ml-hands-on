@@ -11,9 +11,14 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 |------------|------------------------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
 | 1          | Course Introduction + Introduction to ML | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session01) | -                                                                                  |
 | 2          | Data Preprocessing                       | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session02) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session02) |
-| 3          | ...                                      | -                                                                               | -                                                                                  |
-| 4          | ...                                      | -                                                                               | -                                                                                  |
-| 5          | ...                                      | -                                                                               | -                                                                                  |
+| 3          | Introduction to Git                      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session03) | -                                                                                  |
+| 4          | Data Scaling and Feature Selection       | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session04) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session04) |
+| 5          | ...                                      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session05) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session05) |
+| 6          | ...                                      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session06) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session06) |
+| 7          | ...                                      | -                                                                               | -                                                                                  |
+| 8          | ...                                      | -                                                                               | -                                                                                  |
+| 9          | ...                                      | -                                                                               | -                                                                                  |
+| 10         | ...                                      | -                                                                               | -                                                                                  |
 
 ## ML Package Challenges
 
