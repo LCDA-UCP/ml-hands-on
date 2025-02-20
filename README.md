@@ -99,3 +99,5 @@ This will update your branch with the latest changes from the main branch.
 ```bash
 git push origin <branch-name>
 ```
+
+This will push the changes to your branch on GitHub.
