@@ -93,3 +93,9 @@ git merge origin/main
 ```
 
 This will update your branch with the latest changes from the main branch.
+
+3. Push the changes to your branch on GitHub:
+
+```bash
+git push origin <branch-name>
+```
