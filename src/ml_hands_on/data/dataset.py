@@ -43,3 +43,23 @@ class Dataset:
         tuple (n_samples, n_features)
         """
         return self.X.shape
+
+    def has_label (self)->bool:
+        if self.y is None:
+            return False
+        else:
+            return True
+
+
+    def get_class (self):
+
+        if self.has_label:
+
+            return np.unique(self.y)
+        else:
+            return None
+
+
+
+
+
