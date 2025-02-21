@@ -20,16 +20,6 @@ class Dataset:
         label: str (1)
             The label name
         """
-        if X is None:
-            raise ValueError("X cannot be None")
-        if y is not None and len(X) != len(y):
-            raise ValueError("X and y must have the same length")
-        if features is not None and len(X[0]) != len(features):
-            raise ValueError("Number of features must match the number of columns in X")
-        if features is None:
-            features = [f"feat_{str(i)}" for i in range(X.shape[1])]
-        if y is not None and label is None:
-            label = "y"
         self.X = X
         self.y = y
         self.features = features
@@ -53,7 +43,7 @@ class Dataset:
 
     def get_class (self):
 
-        if self.has_label:
+        if self.has_label():
 
             return np.unique(self.y)
         else:
