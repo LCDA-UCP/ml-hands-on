@@ -14,8 +14,8 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | 3          | Introduction to Git                      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session03) | -                                                                                  |
 | 4          | Data Scaling and Feature Selection       | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session04) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session04) |
 | 5          | Clustering                               | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session05) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session05) |
-| 6          | Dimensionality Reduction                 | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session06) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session06) |
-| 7          | ...                                      | -                                                                               | -                                                                                  |
+| 6          | Practical Session                        | -                                                                               | [issues #1, #2 and #3](https://github.com/LCDA-UCP/ml-hands-on/issues)             |
+| 7          | Dimensionality Reduction                 | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session06) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session06) |
 | 8          | ...                                      | -                                                                               | -                                                                                  |
 | 9          | ...                                      | -                                                                               | -                                                                                  |
 | 10         | ...                                      | -                                                                               | -                                                                                  |
@@ -93,3 +93,11 @@ git merge origin/main
 ```
 
 This will update your branch with the latest changes from the main branch.
+
+3. Push the changes to your branch on GitHub:
+
+```bash
+git push origin <branch-name>
+```
+
+This will push the changes to your branch on GitHub.
