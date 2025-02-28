@@ -15,8 +15,8 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | 4          | Data Scaling and Feature Selection       | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session04) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session04) |
 | 5          | Clustering                               | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session05) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session05) |
 | 6          | Practical Session                        | -                                                                               | [issues #1, #2 and #3](https://github.com/LCDA-UCP/ml-hands-on/issues)             |
-| 7          | Dimensionality Reduction                 | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session06) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session06) |
-| 8          | ...                                      | -                                                                               | -                                                                                  |
+| 7          | Dimensionality Reduction                 | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session07) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session07) |
+| 8          | Introduction to Supervised Learning      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session08) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session08) |
 | 9          | ...                                      | -                                                                               | -                                                                                  |
 | 10         | ...                                      | -                                                                               | -                                                                                  |
 
