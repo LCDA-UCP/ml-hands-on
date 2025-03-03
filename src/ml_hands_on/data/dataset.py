@@ -75,6 +75,17 @@ class Dataset:
         """
         return np.nanvar(self.X)
 
+    def get_median(self)->np.ndarray:
+        """
+        Computes the median of each feature.
+
+        returns
+        -------
+        np.ndarray
+        array containing the median of each feature.
+        """
+        return np.nanmedian(self.X)
+
     def get_min(self)->np.ndarray:
         """
         Computes the minimum value of each feature.
@@ -112,11 +123,3 @@ class Dataset:
         summary = pd.DataFrame(data, index=self.features)
 
         return summary
-
-
-
-
-
-
-
-
