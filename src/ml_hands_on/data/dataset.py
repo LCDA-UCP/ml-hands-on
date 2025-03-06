@@ -123,3 +123,14 @@ class Dataset:
         summary = pd.DataFrame(data, index=self.features)
 
         return summary
+
+    def dropna(self)->None:
+
+        """Removes all samples containing ate least one null value from the dataset"""
+
+        mask = ~np.isnan(self.X).any(axis=1)
+        self.X=self.X[mask]
+        if self.has_label():
+            self.y=self.y[mask]
+
+
