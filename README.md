@@ -17,8 +17,10 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | 6          | Practical Session                        | -                                                                               | [issues #1, #2 and #3](https://github.com/LCDA-UCP/ml-hands-on/issues)             |
 | 7          | Dimensionality Reduction                 | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session07) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session07) |
 | 8          | Introduction to Supervised Learning      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session08) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session08) |
-| 9          | ...                                      | -                                                                               | -                                                                                  |
-| 10         | ...                                      | -                                                                               | -                                                                                  |
+| 9          | Instance-based and Probabilistic Models  | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session09) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session09) |
+| 10         | Linear Models                            | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session10) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session10) |
+| 11         | ...                                      | -                                                                               | -                                                                                  |
+| 12         | ...                                      | -                                                                               | -                                                                                  |
 
 ## ML Package Challenges
 
