@@ -28,6 +28,12 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | [#2](https://github.com/LCDA-UCP/ml-hands-on/issues/2) | Feature Selection     | @D1ana-bd         | @cleopatra-santos | @Dacni            |
 | [#3](https://github.com/LCDA-UCP/ml-hands-on/issues/3) | Clustering            | @Dacni            | @D1ana-bd         | @cleopatra-santos |
 
+## Important Dates
+
+- **Exam:** 9th of May, 2025
+- **Project Presentation:** 23rd of May, 2025
+- **Project Delivery:** 30th of May, 2025
+- **Challenges Development Limit:** 16th of April, 2025
 
 ## Setup
 
