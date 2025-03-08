@@ -134,3 +134,48 @@ class Dataset:
             self.y=self.y[mask]
 
 
+    def fillna(self,strategy:str = "mean", value: Optional[float] = None)->None:
+
+        """
+        Fills missing values in the dataset using a specified strategy.
+
+        Parameters
+        ----------
+        strategy : str, default="mean"
+            Strategy to use for filling missing values. Options are "mean", "median", or "value".
+        value : Optional[float], default=None
+            Specific value to use if strategy is "value".
+
+        Raises
+        ------
+        ValueError
+            If an invalid strategy is provided.
+              """
+        if strategy == "mean":   # I set strategy = mean by default
+            fill_values = np.nanmean(self.X)
+        elif strategy == "median":
+            fill_values = np.nanmedian(self.X)
+        elif strategy == "value" and value is not None:
+            fill_values = np.full(self.X.shape[1],value)
+        elif strategy== "value" and value is None:
+            raise ValueError("must specify the value when the strategy is value")
+        else:
+            raise ValueError("Invalid strategy. Choose mean , media, or provide a especific value ")
+
+        for i in range (self.X.shape[1]) :
+
+            self.X[:,i] = np.where(np.isnan(self.X[:,i]), fill_values[i],self.X[:,i])
+
+
+    def remove_index(self, index:int)->None:
+        """
+          Removes a sample from the dataset by its index.
+
+           Parameters
+           ----------
+           index : int
+               Index of the sample to remove.
+        """
+        self.X =np.delete(self.X,index)
+        if self.has_label():
+            self.y = np.delete(self.y,index)
