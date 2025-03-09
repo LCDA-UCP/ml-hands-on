@@ -41,9 +41,8 @@ def write_csv(filename,dataset, sep=',',features=True, label=True):
 
     if label and  dataset.label is not None:
 
-        df[label]= dataset.label
+        df["label"]= dataset.label
 
     df.to_csv(filename,sep=sep, index=False, header=features)
 
-
-
+    print(f"File written successfully to {filename}")
