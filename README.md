@@ -19,8 +19,23 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | 8          | Introduction to Supervised Learning      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session08) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session08) |
 | 9          | Instance-based and Probabilistic Models  | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session09) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session09) |
 | 10         | Linear Models                            | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session10) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session10) |
-| 11         | ...                                      | -                                                                               | -                                                                                  |
-| 12         | ...                                      | -                                                                               | -                                                                                  |
+| 11         | Tree-based Models - Part 1               | -                                                                               | -                                                                                  |
+| 12         | Tree-based Models - Part 2               | -                                                                               | -                                                                                  |
+| 13         | Practical Session                        | -                                                                               | -                                                                                  |
+| 14         | Support Vector Machines - Part 1         | -                                                                               | -                                                                                  |
+| 15         | Support Vector Machines - Part 2         | -                                                                               | -                                                                                  |
+| 16         | Support Vector Machines - Part 3         | -                                                                               | -                                                                                  |
+| 17         | Neural Networks                          | -                                                                               | -                                                                                  |
+| 18         | Ensemble Learning                        | -                                                                               | -                                                                                  |
+| 19         | Hyperparameter Optimization              | -                                                                               | -                                                                                  |
+| 20         | Practical Session                        | -                                                                               | -                                                                                  |
+| 21         | Data Imbalance                           | -                                                                               | -                                                                                  |
+| 22         | Exam Revisions                           | -                                                                               | -                                                                                  |
+| 23         | Exam                                     | -                                                                               | -                                                                                  |
+| 24         | Exam Correction                          | -                                                                               | -                                                                                  |
+| 25         | Assignment Presentations                 | -                                                                               | -                                                                                  |
+| 26         | Explainable AI                           | -                                                                               | -                                                                                  |
+| 27         | Multitask and Multilabel Learning        | -                                                                               | -                                                                                  |
 
 ## ML Package Challenges
 
