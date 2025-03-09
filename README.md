@@ -29,6 +29,9 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | [#1](https://github.com/LCDA-UCP/ml-hands-on/issues/1) | Data Management + I/O | @cleopatra-santos | @Dacni            | @D1ana-bd         |
 | [#2](https://github.com/LCDA-UCP/ml-hands-on/issues/2) | Feature Selection     | @D1ana-bd         | @cleopatra-santos | @Dacni            |
 | [#3](https://github.com/LCDA-UCP/ml-hands-on/issues/3) | Clustering            | @Dacni            | @D1ana-bd         | @cleopatra-santos |
+| [#4](https://github.com/LCDA-UCP/ml-hands-on/issues/4) | KNN                   | @cleopatra-santos | @Dacni            | @D1ana-bd         |
+| [#5](https://github.com/LCDA-UCP/ml-hands-on/issues/5) | Linear Models         | @D1ana-bd         | @cleopatra-santos | @Dacni            |
+| [#6](https://github.com/LCDA-UCP/ml-hands-on/issues/7) | Tree-based Models     | @Dacni            | @D1ana-bd         | @cleopatra-santos |
 
 ## Important Dates
 
