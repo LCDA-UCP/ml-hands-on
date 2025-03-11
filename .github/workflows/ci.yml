@@ -15,6 +15,7 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
+          - macos-latest
         python-version:
           - 3.10
 
@@ -24,9 +25,18 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+          cache: pip  # Built-in caching for faster installs
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: Install dependencies
         run: |
@@ -34,5 +44,4 @@ jobs:
           pip install tox tox-gh-actions
 
       - name: Test with tox
-        run: |
-          tox
+        run: tox -e py
