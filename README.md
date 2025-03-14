@@ -50,7 +50,7 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 
 ## Important Dates
 
-- **Exam:** 9th of May, 2025
+- **Exam:** 8th of May, 2025
 - **Project Presentation:** 23rd of May, 2025
 - **Project Delivery:** 30th of May, 2025
 - **Challenges Development Limit:** 16th of April, 2025
