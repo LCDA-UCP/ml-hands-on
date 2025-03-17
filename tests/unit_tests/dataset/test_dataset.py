@@ -42,3 +42,22 @@ class TestDataset(unittest.TestCase):
         dataset = Dataset(X, y, features=['a', 'b', 'c'], label='y')
 
         self.assertTrue(len(dataset.get_class()) == 2)
+
+
+    def test_dropna(self):
+        X = np.array([[1, np.nan, 3], [4, 5, 6], [np.nan, 8, 9]])
+        y = np.array([1, 2, 3])
+        dataset = Dataset(X, y)
+        dataset.dropna()
+        self.assertEqual(dataset.shape(), (1, 3))
+
+    def test_fillna(self):
+        X = np.array([[1, np.nan, 3], [4, 5, 6], [np.nan, 8, 9]])
+        dataset = Dataset(X)
+        dataset.fillna(strategy='mean')
+        self.assertFalse(np.isnan(dataset.X).any())
+
+        dataset = Dataset(X)
+        dataset.fillna(strategy='value', value=0)
+        self.assertFalse(np.isnan(dataset.X).any())
+

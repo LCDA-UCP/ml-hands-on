@@ -133,9 +133,7 @@ class Dataset:
         if self.has_label():
             self.y=self.y[mask]
 
-
-    def fillna(self,strategy:str = "mean", value: Optional[float] = None)->None:
-
+    def fillna(self, strategy: str = "mean", value: Optional[float] = None) -> None:
         """
         Fills missing values in the dataset using a specified strategy.
 
@@ -150,22 +148,22 @@ class Dataset:
         ------
         ValueError
             If an invalid strategy is provided.
-              """
-        if strategy == "mean":   # I set strategy = mean by default
-            fill_values = np.nanmean(self.X)
+        """
+        if strategy == "mean":
+            fill_values = np.nanmean(self.X, axis=0)
         elif strategy == "median":
-            fill_values = np.nanmedian(self.X)
+            fill_values = np.nanmedian(self.X, axis=0)
         elif strategy == "value" and value is not None:
-            fill_values = np.full(self.X.shape[1],value)
-        elif strategy== "value" and value is None:
-            raise ValueError("must specify the value when the strategy is value")
+            fill_values = np.full(self.X.shape[1], value)
+        elif strategy == "value" and value is None:
+            raise ValueError("Must specify the value when the strategy is 'value'")
         else:
-            raise ValueError("Invalid strategy. Choose mean , media, or provide a especific value ")
+            raise ValueError("Invalid strategy. Choose 'mean', 'median', or provide a specific value.")
 
-        for i in range (self.X.shape[1]) :
+        fill_values = np.asarray(fill_values)
 
-            self.X[:,i] = np.where(np.isnan(self.X[:,i]), fill_values[i],self.X[:,i])
-
+        for i in range(self.X.shape[1]):
+            self.X[:, i] = np.where(np.isnan(self.X[:, i]), fill_values[i], self.X[:, i])
 
     def remove_index(self, index:int)->None:
         """
