@@ -165,15 +165,15 @@ class Dataset:
         for i in range(self.X.shape[1]):
             self.X[:, i] = np.where(np.isnan(self.X[:, i]), fill_values[i], self.X[:, i])
 
-    def remove_index(self, index:int)->None:
+    def remove_index(self, index: int) -> None:
         """
-          Removes a sample from the dataset by its index.
+        Removes a sample from the dataset by its index.
 
-           Parameters
-           ----------
-           index : int
-               Index of the sample to remove.
+        Parameters
+        ----------
+        index : int
+            Index of the sample to remove.
         """
-        self.X =np.delete(self.X,index)
+        self.X = np.delete(self.X, index, axis=0)
         if self.has_label():
-            self.y = np.delete(self.y,index)
+            self.y = np.delete(self.y, index, axis=0)

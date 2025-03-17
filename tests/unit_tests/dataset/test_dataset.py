@@ -2,7 +2,10 @@ import unittest
 
 import numpy as np
 
+import pandas as pd
+
 from ml_hands_on.data import Dataset
+
 
 
 class TestDataset(unittest.TestCase):
@@ -68,6 +71,13 @@ class TestDataset(unittest.TestCase):
         dataset = Dataset(X, features=['a', 'b', 'c'])
         np.testing.assert_array_almost_equal(dataset.get_max(), np.array([7, 8, 9]))
 
+    def test_get_summary(self):
+        X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+        dataset = Dataset(X, features=['a', 'b', 'c'])
+        summary = dataset.get_summary()
+        self.assertIsInstance(summary, pd.DataFrame)
+        self.assertEqual(summary.shape, (3, 5))
+
 
     def test_dropna(self):
         X = np.array([[1, np.nan, 3], [4, 5, 6], [np.nan, 8, 9]])
@@ -86,3 +96,10 @@ class TestDataset(unittest.TestCase):
         dataset.fillna(strategy='value', value=0)
         self.assertFalse(np.isnan(dataset.X).any())
 
+    def test_remove_index(self):
+        X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+        y = np.array([1, 2, 3])
+        dataset = Dataset(X, y)
+        dataset.remove_index(1)
+        self.assertEqual(dataset.shape(), (2, 3))
+        self.assertTrue(np.array_equal(dataset.y, np.array([1, 3])))
