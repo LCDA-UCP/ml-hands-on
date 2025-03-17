@@ -62,7 +62,7 @@ class Dataset:
         np.ndarray
         array containing the mean of each feature.
         """
-        return np.nanmean(self.X)
+        return np.nanmean(self.X, axis=0)
 
     def get_variance(self)->np.ndarray:
         """
@@ -73,7 +73,7 @@ class Dataset:
         np.ndarray
         array containing the variance of each feature.
         """
-        return np.nanvar(self.X)
+        return np.nanvar(self.X, axis = 0)
 
     def get_median(self)->np.ndarray:
         """
@@ -84,7 +84,7 @@ class Dataset:
         np.ndarray
         array containing the median of each feature.
         """
-        return np.nanmedian(self.X)
+        return np.nanmedian(self.X, axis = 0)
 
     def get_min(self)->np.ndarray:
         """
@@ -95,7 +95,7 @@ class Dataset:
         np.ndarray
         array containing the  minimum value of each feature.
         """
-        return np.nanmin(self.X)
+        return np.nanmin(self.X, axis = 0)
 
     def get_max(self) -> np.ndarray:
 
@@ -108,7 +108,7 @@ class Dataset:
        array containing the  max value of each feature.
        """
 
-        return np.nanmax(self.X)
+        return np.nanmax(self.X, axis = 0)
 
 
     def get_summary(self)-> pd.DataFrame:

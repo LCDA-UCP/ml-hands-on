@@ -43,6 +43,31 @@ class TestDataset(unittest.TestCase):
 
         self.assertTrue(len(dataset.get_class()) == 2)
 
+    def test_get_mean(self):
+        X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+        dataset = Dataset(X, features=['a', 'b', 'c'])
+        np.testing.assert_array_almost_equal(dataset.get_mean(), np.array([4, 5, 6]))
+
+    def test_get_variance(self):
+        X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+        dataset = Dataset(X, features=['a', 'b', 'c'])
+        np.testing.assert_array_almost_equal(dataset.get_variance(), np.array([6, 6, 6]))
+
+    def test_get_median(self):
+        X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+        dataset = Dataset(X, features=['a', 'b', 'c'])
+        np.testing.assert_array_almost_equal(dataset.get_median(), np.array([4, 5, 6]))
+
+    def test_get_min(self):
+        X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+        dataset = Dataset(X, features=['a', 'b', 'c'])
+        np.testing.assert_array_almost_equal(dataset.get_min(), np.array([1, 2, 3]))
+
+    def test_get_max(self):
+        X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+        dataset = Dataset(X, features=['a', 'b', 'c'])
+        np.testing.assert_array_almost_equal(dataset.get_max(), np.array([7, 8, 9]))
+
 
     def test_dropna(self):
         X = np.array([[1, np.nan, 3], [4, 5, 6], [np.nan, 8, 9]])
