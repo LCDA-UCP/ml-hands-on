@@ -5,23 +5,23 @@ import numpy as np
 
 class VarianceThreshold(Transformer):
     """
-       Classe para remover features com baixa variância.
+        Class to remove features with low variance.
 
-       Parâmetros
-       ----------
-       threshold: float
-           Valor mínimo de variância para manter uma feature.
-       """
+        Parameters
+        ----------
+        threshold: float
+            Minimum variance required to retain a feature.
+    """
 
     def __init__(self, threshold: float = 0.0):
         """
-            Construtor da classe VarianceThreshold.
+            Constructor of the VarianceThreshold class.
 
-            Parâmetros
+            Parameters
             ----------
             threshold: float
-                Valor mínimo de variância para manter uma feature.
-            """
+                Minimum variance value to retain a feature.
+        """
 
         self.threshold = threshold
         self.variance = None
@@ -29,35 +29,36 @@ class VarianceThreshold(Transformer):
 
     def _fit(self, dataset:Dataset):
         """
-                Calcula e guarda a variância das features do dataset.
+            Calculates and stores the variance of the dataset features.
 
-                Parameters
-                ----------
+            Parameters
+            ----------
                 dataset : Dataset
-                    Dataset original com todas as features.
+                Original dataset containing all features.
 
-                Returns
-                -------
+            Returns
+            -------
                 self : object
-                    Retorna a própria instância já com as variâncias calculadas.
-                """
+                Returns the instance itself with variances already computed.
+        """
+
         self.variance = dataset.get_variance()
         return self
 
     def _transform(self, dataset:Dataset)-> Dataset:
         """
-            Remove as features com variância inferior ou igual ao threshold.
+            Removes features with variance less than or equal to the threshold.
 
             Parameters
             ----------
-            dataset : Dataset
-                Dataset original com todas as features.
+                dataset : Dataset
+                Original dataset containing all features.
 
             Returns
             -------
             Dataset
-                Novo dataset apenas com features cuja variância é superior ao threshold.
-            """
+                New dataset containing only features whose variance exceeds the threshold.
+        """
 
         mask = self.variance > self.threshold
         X_selected = dataset.X[:,mask]
