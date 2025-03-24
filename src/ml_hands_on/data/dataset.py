@@ -37,15 +37,27 @@ class Dataset:
 
     def has_label (self)->bool:
 
+        """
+        Returns whether the dataset has labels
+        Returns
+        -------
+        bool
+        """
+
         if self.y is None:
             return False
         else:
             return True
 
-#get_classes: Returns the classes of the dataset (possible values of y).
-
     def get_class (self):
 
+        """
+        Returns the unique class in the dataset
+        Returns
+        -------
+        numpy.ndarray or None
+
+        """
         if self.has_label():
 
             return np.unique(self.y)
