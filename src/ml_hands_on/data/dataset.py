@@ -124,7 +124,13 @@ class Dataset:
 
 
     def get_summary(self)-> pd.DataFrame:
+        """
+             Returns a summary of statistical measures for the dataset.
 
+             Returns
+             -------
+             pd.DataFrame
+             """
         data={
             'Mean': self.get_mean(),
             'Variance': self.get_variance(),
