@@ -123,7 +123,7 @@ class Dataset:
         return np.nanmax(self.X, axis = 0)
 
 
-    def get_summary(self)-> pd.DataFrame:
+    def summary(self)-> pd.DataFrame:
         """
              Returns a summary of statistical measures for the dataset.
 
