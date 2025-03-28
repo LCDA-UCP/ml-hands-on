@@ -49,7 +49,7 @@ class Dataset:
         else:
             return True
 
-    def get_class (self):
+    def get_classes (self):
 
         """
         Returns the unique class in the dataset
@@ -183,7 +183,7 @@ class Dataset:
         for i in range(self.X.shape[1]):
             self.X[:, i] = np.where(np.isnan(self.X[:, i]), fill_values[i], self.X[:, i])
 
-    def remove_index(self, index: int) -> None:
+    def remove_by_index(self, index: int) -> None:
         """
         Removes a sample from the dataset by its index.
 
