@@ -32,19 +32,19 @@ class TestDataset(unittest.TestCase):
         y = np.array([[1], [2], [2]])
         dataset = Dataset(X, y, features=['a', 'b', 'c'], label='y')
 
-        self.assertTrue(len(dataset.get_class())==2)
+        self.assertTrue(len(dataset.get_classes())==2)
 
         X = np.array([[1, 2, 3], [4, 5, 6]])
         y = np.array([1, 2])
         dataset = Dataset(X)
 
-        self.assertIsNone(dataset.get_class())
+        self.assertIsNone(dataset.get_classes())
 
         X = np.array([[1, 2, 3], [4, 5, 6]])
         y = np.array([[1], [2]])
         dataset = Dataset(X, y, features=['a', 'b', 'c'], label='y')
 
-        self.assertTrue(len(dataset.get_class()) == 2)
+        self.assertTrue(len(dataset.get_classes()) == 2)
 
     def test_get_mean(self):
         X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
@@ -74,7 +74,7 @@ class TestDataset(unittest.TestCase):
     def test_get_summary(self):
         X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
         dataset = Dataset(X, features=['a', 'b', 'c'])
-        summary = dataset.get_summary()
+        summary = dataset.summary()
         self.assertIsInstance(summary, pd.DataFrame)
         self.assertEqual(summary.shape, (3, 5))
 
@@ -93,6 +93,10 @@ class TestDataset(unittest.TestCase):
         self.assertFalse(np.isnan(dataset.X).any())
 
         dataset = Dataset(X)
+        dataset.fillna(strategy='mean')
+        self.assertFalse(np.isnan(dataset.X).any())
+
+        dataset = Dataset(X)
         dataset.fillna(strategy='value', value=0)
         self.assertFalse(np.isnan(dataset.X).any())
 
@@ -100,6 +104,6 @@ class TestDataset(unittest.TestCase):
         X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
         y = np.array([1, 2, 3])
         dataset = Dataset(X, y)
-        dataset.remove_index(1)
+        dataset.remove_by_index(1)
         self.assertEqual(dataset.shape(), (2, 3))
         self.assertTrue(np.array_equal(dataset.y, np.array([1, 3])))
