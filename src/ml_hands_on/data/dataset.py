@@ -37,15 +37,27 @@ class Dataset:
 
     def has_label (self)->bool:
 
+        """
+        Returns whether the dataset has labels
+        Returns
+        -------
+        bool
+        """
+
         if self.y is None:
             return False
         else:
             return True
 
-#get_classes: Returns the classes of the dataset (possible values of y).
+    def get_classes (self):
 
-    def get_class (self):
+        """
+        Returns the unique class in the dataset
+        Returns
+        -------
+        numpy.ndarray or None
 
+        """
         if self.has_label():
 
             return np.unique(self.y)
@@ -111,8 +123,14 @@ class Dataset:
         return np.nanmax(self.X, axis = 0)
 
 
-    def get_summary(self)-> pd.DataFrame:
+    def summary(self)-> pd.DataFrame:
+        """
+             Returns a summary of statistical measures for the dataset.
 
+             Returns
+             -------
+             pd.DataFrame
+             """
         data={
             'Mean': self.get_mean(),
             'Variance': self.get_variance(),
@@ -165,7 +183,7 @@ class Dataset:
         for i in range(self.X.shape[1]):
             self.X[:, i] = np.where(np.isnan(self.X[:, i]), fill_values[i], self.X[:, i])
 
-    def remove_index(self, index: int) -> None:
+    def remove_by_index(self, index: int) -> None:
         """
         Removes a sample from the dataset by its index.
 

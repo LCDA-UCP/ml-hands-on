@@ -54,7 +54,7 @@ def read_data_file(filename,dataset, sep, label=True):
        Writes the file with the specified format.
        """
 
-    df = dataset.features.copy()
+    df = pd.DataFrame(dataset.X, columns= dataset.features)
 
     if label and  dataset.label is not None:
 

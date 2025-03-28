@@ -18,13 +18,13 @@ def read_csv(filename, sep=',',features=True, label=True):
     df = pd.read_csv(filename, sep=sep, header=0 if features else None)
 
     if label:
-        X = df.iloc[:, :-1]  # All columns except the last one
-        y = df.iloc[:, -1]  # Last column
+        X = df.iloc[:, :-1]
+        y = df.iloc[:, -1]
     else:
         X = df
         y = None
 
-    return Dataset(X, y)
+    return Dataset(X.values, y.values if y is not None else None, list(X.columns), y.name if y is not None else None)
 
 def write_csv(filename,dataset, sep=',',features=True, label=True):
     """
@@ -37,11 +37,11 @@ def write_csv(filename,dataset, sep=',',features=True, label=True):
     Expected Output:
     Writes the file with the specified arguments."""
 
-    df = dataset.features.copy()
+    df = pd.DataFrame(dataset.X, columns= dataset.features)
 
-    if label and  dataset.label is not None:
+    if label and  dataset.y is not None:
 
-        df["label"]= dataset.label
+        df["label"]= dataset.y
 
     df.to_csv(filename,sep=sep, index=False, header=features)
 
