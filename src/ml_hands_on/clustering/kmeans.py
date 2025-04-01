@@ -66,3 +66,16 @@ class KMeans(Transformer, Model):
         X = dataset.features
         transformed_data = np.array([self.distance_function(c, X) for c in self.centroids]).T
         return Dataset(features=transformed_data)
+
+    def _predict(self, dataset: Dataset) -> np.ndarray:
+        """
+        Assign clusters to new samples.
+
+        Parameters:
+        dataset (Dataset): Input dataset.
+
+        Returns:
+        np.ndarray: Cluster assignments.
+        """
+        distances = self._transform(dataset).features
+        return np.argmin(distances, axis=1)
