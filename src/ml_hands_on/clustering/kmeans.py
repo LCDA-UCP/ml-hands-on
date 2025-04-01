@@ -25,3 +25,44 @@ class KMeans(Transformer, Model):
         self.centroids = None
         self.labels = None
 
+    def _fit(self, dataset: Dataset):
+        """
+        Fit the KMeans model to the dataset.
+
+        Parameters:
+        dataset (Dataset): Input dataset.
+        """
+        X = dataset.features
+        np.random.seed(42)
+        self.centroids = X[np.random.choice(X.shape[0], self.k, replace=False)]
+
+        for _ in range(self.max_iter):
+
+            distances = np.array([self.distance_function(c, X) for c in self.centroids])
+            self.labels = np.argmin(distances, axis=0)
+
+
+            new_centroids = np.array([X[self.labels == i].mean(axis=0) for i in range(self.k)])
+
+
+            if np.all(self.centroids == new_centroids):
+                break
+
+            self.centroids = new_centroids
+
+        self.is_fitted = True
+        return self
+
+    def _transform(self, dataset: Dataset) -> Dataset:
+        """
+        Compute the distances from each sample to all centroids and transform dataset.
+
+        Parameters:
+        dataset (Dataset): Input dataset.
+
+        Returns:
+        Dataset: Transformed dataset with distances to centroids.
+        """
+        X = dataset.features
+        transformed_data = np.array([self.distance_function(c, X) for c in self.centroids]).T
+        return Dataset(features=transformed_data)
