@@ -1,6 +1,6 @@
 import numpy as np
 from ml_hands_on.data import Dataset
-from ml_hands_on.model import Model
+from ml_hands_on.base.model import Model
 from ml_hands_on.base.transformer import Transformer
 
 
