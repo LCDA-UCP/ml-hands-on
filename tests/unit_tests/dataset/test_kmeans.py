@@ -4,6 +4,7 @@ from ml_hands_on.clustering.kmeans import KMeans
 from ml_hands_on.statistics.euclidean_distance import euclidean_distance
 from ml_hands_on.data import Dataset
 
+
 class test_kmeans(unittest.TestCase):
 
     def test_fit(self):
@@ -27,7 +28,7 @@ class test_kmeans(unittest.TestCase):
         model._fit(dataset)
 
         transformed = model._transform(dataset)
-        assert transformed.X.shape == (6, 2)
+        assert transformed.X.shape == (6, 2)  # 6 samples, 2 centroids
 
     def test_predict(self):
         X_train = np.array([[1, 2], [1, 4], [1, 0],
@@ -43,4 +44,5 @@ class test_kmeans(unittest.TestCase):
         preds = model._predict(test_set)
         assert preds.shape == (2,)
         assert all(p in [0, 1] for p in preds)
+
 
