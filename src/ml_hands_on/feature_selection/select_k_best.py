@@ -1,49 +1,53 @@
+from typing import Callable
+
 import numpy as np
 
+from ml_hands_on.base import Transformer
 from ml_hands_on.data.dataset import Dataset
+from ml_hands_on.statistics.f_classification import f_classification
 
 
-class PCA:
+class SelectKBest(Transformer):
     """
-    Principal Component Analysis
-    Linear algebra technique to reduce the dimensionality of a dataset.
-    It finds correlations between features and projects them onto a lower dimensional space.
-    Each PC is a linear combination of the original features that explains the most variance in the data.
+    Select features according to the k highest scores.
+    Feature ranking is performed by computing the scores of each feature using a scoring function:
+        - f_classification: ANOVA F-value between label/feature for classification tasks.
+        - f_regression: F-value obtained from F-value of r's pearson correlation coefficients for regression tasks.
 
     Parameters
     ----------
-    n_components: int
-        Number of components to keep
+    score_func: callable
+        Function taking dataset and returning a pair of arrays (scores, p_values)
+    k: int, default=10
+        Number of top features to select.
 
     Attributes
     ----------
-    mean: np.ndarray
-        The mean of the dataset
-    components: np.ndarray
-        The principal components aka the unitary matrix of eigenvectors
-    explained_variance: np.ndarray
-        The variance explained by each principal component aka the diagonal matrix of eigenvalues
+    F: array, shape (n_features,)
+        F scores of features.
+    p: array, shape (n_features,)
+        p-values of F-scores.
     """
-    def __init__(self, n_components: int = 2):
+    def __init__(self, score_func: Callable = f_classification, k: int = 10):
         """
-        Principal Component Analysis algorithm
+        Select features according to the k highest scores.
 
         Parameters
         ----------
-        n_components: int
-            Number of components to keep
+        score_func: callable
+            Function taking dataset and returning a pair of arrays (scores, p_values)
+        k: int, default=10
+            Number of top features to select.
         """
-        # parameters
-        self.n_components = n_components
+        super().__init__()
+        self.k = k
+        self.score_func = score_func
+        self.F = None
+        self.p = None
 
-        # attributes
-        self.mean = None
-        self.components = None
-        self.explained_variance = None
-
-    def fit(self, dataset: Dataset) -> 'PCA':
+    def _fit(self, dataset: Dataset) -> 'SelectKBest':
         """
-        It fits PCA to compute the eigenvectors and eigenvalues.
+        It fits SelectKBest to compute the F scores and p-values.
 
         Parameters
         ----------
@@ -55,26 +59,12 @@ class PCA:
         self: object
             Returns self.
         """
-        # center the data
-        self.mean = np.mean(dataset.X, axis=0)
-        X = dataset.X - self.mean
-
-        # u is the unitary matrix of eigenvectors
-        # s is the diagonal matrix of eigenvalues
-        # v_t is the unitary matrix of right singular vectors
-        u, s, v_t = np.linalg.svd(X, full_matrices=False)
-
-        # keep the first n_components
-        self.components = v_t[:self.n_components]
-
-        # explained variance
-        explained_variance = (s ** 2) / (X.shape[0] - 1)
-        self.explained_variance = explained_variance[:self.n_components]
+        self.F, self.p = self.score_func(dataset)
         return self
 
-    def transform(self, dataset: Dataset) -> np.ndarray:
+    def _transform(self, dataset: Dataset) -> Dataset:
         """
-        It projects the data onto the principal components.
+        It transforms the dataset by selecting the k highest scoring features.
 
         Parameters
         ----------
@@ -83,15 +73,24 @@ class PCA:
 
         Returns
         -------
-        X_reduced: np.ndarray
-            The projected data
+        dataset: Dataset
+            A labeled dataset with the k highest scoring features.
         """
-        X = dataset.X - self.mean
-        return np.dot(X, self.components.T)
+        valid_idxs = ~np.isnan(self.F)  # Exclude NaN features
+        F_valid = self.F[valid_idxs]
 
-    def fit_transform(self, dataset: Dataset) -> np.ndarray:
+        if len(F_valid) < self.k:  # Adjust k if fewer valid features exist
+            self.k = len(F_valid)
+
+        idxs = np.argsort(F_valid)[-self.k:]  # Select top-k valid features
+        selected_features = np.array(dataset.features)[valid_idxs][idxs]
+
+        return Dataset(X=dataset.X[:, valid_idxs][:, idxs], y=dataset.y, features=list(selected_features),
+                       label=dataset.label)
+
+    def fit_transform(self, dataset: Dataset) -> Dataset:
         """
-        It fits PCA and projects the data onto the principal components.
+        It fits SelectKBest and transforms the dataset by selecting the k highest scoring features.
 
         Parameters
         ----------
@@ -100,19 +99,22 @@ class PCA:
 
         Returns
         -------
-        X_reduced: np.ndarray
-            The projected data
+        dataset: Dataset
+            A labeled dataset with the k highest scoring features.
         """
         self.fit(dataset)
         return self.transform(dataset)
 
 
 if __name__ == '__main__':
-    from ml_hands_on.data.dataset import Dataset
-    dataset_ = Dataset.from_random(100, 10)
+    dataset = Dataset(X=np.array([[0, 2, 0, 3, 8],
+                                  [0, 1, 4, 3, 1],
+                                  [0, 1, 1, 3, 8]]),
+                      y=np.array([0, 1, 0]),
+                      features=["f1", "f2", "f3", "f4", "f5"],
+                      label="y")
 
-    pca = PCA(n_components=2)
-    X_reduced = pca.fit_transform(dataset_)
-    print(X_reduced.shape)
-    print(pca.components.shape)
-    print(pca.explained_variance)
+    selector = SelectKBest(k=3)
+    selector = selector.fit(dataset)
+    dataset = selector.transform(dataset)
+    print(dataset.features)
