@@ -32,7 +32,7 @@ class KMeans(Transformer, Model):
         Parameters:
         dataset (Dataset): Input dataset.
         """
-        X = dataset.features
+        X = dataset.X
         np.random.seed(42)
         self.centroids = X[np.random.choice(X.shape[0], self.k, replace=False)]
 
@@ -63,9 +63,9 @@ class KMeans(Transformer, Model):
         Returns:
         Dataset: Transformed dataset with distances to centroids.
         """
-        X = dataset.features
+        X = dataset.X
         transformed_data = np.array([self.distance_function(c, X) for c in self.centroids]).T
-        return Dataset(features=transformed_data)
+        return Dataset(X=transformed_data)
 
     def _predict(self, dataset: Dataset) -> np.ndarray:
         """
