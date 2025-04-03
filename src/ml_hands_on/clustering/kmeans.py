@@ -79,3 +79,6 @@ class KMeans(Transformer, Model):
         """
         distances = self._transform(dataset).features
         return np.argmin(distances, axis=1)
+
+    def _score(self, dataset: Dataset, predictions: np.ndarray) -> float:
+        raise NotImplementedError
