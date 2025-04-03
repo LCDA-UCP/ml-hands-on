@@ -77,7 +77,7 @@ class KMeans(Transformer, Model):
         Returns:
         np.ndarray: Cluster assignments.
         """
-        distances = self._transform(dataset).features
+        distances = self._transform(dataset).X
         return np.argmin(distances, axis=1)
 
     def _score(self, dataset: Dataset, predictions: np.ndarray) -> float:
