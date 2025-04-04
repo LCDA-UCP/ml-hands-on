@@ -1,7 +1,6 @@
-from typing import Tuple, Sequence
-from data.dataset import Dataset
 import pandas as pd
 
+from ml_hands_on.data import Dataset
 
 
 def read_data_file(filename, sep=',', label=True):
