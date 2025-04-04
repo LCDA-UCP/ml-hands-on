@@ -65,10 +65,7 @@ class VarianceThreshold(Transformer):
 
         features_selected = None
         if dataset.features is not None:
-            features_selected = []
-            for i in range(len(mask)):
-                if mask[i]:
-                    features_selected.append(dataset.features[i])
+            features_selected = list(np.array(dataset.features)[mask])
 
         return Dataset(X=X_selected, y=dataset.y, features=features_selected, label=dataset.label)
 
