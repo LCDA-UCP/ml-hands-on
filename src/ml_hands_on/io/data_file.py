@@ -40,7 +40,7 @@ def read_data_file(filename, sep=',', label=True):
     return Dataset(X, y)
 
 
-def read_data_file(filename,dataset, sep, label=True):
+def write_data_file(filename,dataset, sep, label=True):
     """
        Writes a Dataset object to a file.
 
