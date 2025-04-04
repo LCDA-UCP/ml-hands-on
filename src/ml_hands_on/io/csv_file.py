@@ -1,7 +1,7 @@
-from typing import Tuple, Sequence
-from data.dataset import Dataset
-import numpy as np
+
 import pandas as pd
+
+from ml_hands_on.data import Dataset
 
 
 def read_csv(filename, sep=',',features=True, label=True):
