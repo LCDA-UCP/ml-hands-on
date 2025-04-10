@@ -34,6 +34,7 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | 23         | Assignment Presentations                        | -                                                                               | -                                                                                  |
 | 24         | Explainable AI                                  | -                                                                               | -                                                                                  |
 | 25         | Multitask and Multilabel Learning               | -                                                                               | -                                                                                  |
+| 26         | AutoML + Model Deployment and Monitoring        | -                                                                               | -                                                                                  |
 
 ## ML Package Challenges
 
