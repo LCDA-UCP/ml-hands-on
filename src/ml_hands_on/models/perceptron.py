@@ -1,38 +1,39 @@
 import numpy as np
 from ml_hands_on.data.dataset import Dataset
 from ml_hands_on.metrics.accuracy import accuracy
+from ml_hands_on.base.model import Model
 
 
-class Perceptron:
+class Perceptron(Model):
     """
     Perceptron model for binary classification using the Perceptron learning rule.
 
     Parameters
     ----------
-    max_iter : int
+    max_iter : int, default=1000
         Maximum number of training iterations (epochs).
-    learning_rate : float
+    learning_rate : float, default=0.01
         Learning rate for weight updates.
     """
 
     def __init__(self, max_iter: int = 1000, learning_rate: float = 0.01):
-
         """
-          Initializes the Perceptron model.
+        Initializes the Perceptron model.
 
-          Parameters
-          ----------
-          max_iter : int, default=1000
-              Maximum number of iterations (epochs) for training.
-          learning_rate : float, default=0.01
-              Step size used for updating weights during training.
-          """
+        Parameters
+        ----------
+        max_iter : int, default=1000
+            Maximum number of iterations (epochs) for training.
+        learning_rate : float, default=0.01
+            Step size used for updating weights during training.
+        """
+        super().__init__()
         self.max_iter = max_iter
         self.learning_rate = learning_rate
-        self.weights = None
-        self.bias = 0.0
+        self.weights: np.ndarray | None = None
+        self.bias: float = 0.0
 
-    def fit(self, dataset: Dataset) -> None:
+    def _fit(self, dataset: Dataset) -> None:
         """
         Trains the Perceptron model using the provided dataset.
 
@@ -42,7 +43,7 @@ class Perceptron:
             Dataset object containing the feature matrix (X) and binary labels (y).
         """
         X = dataset.X
-        y = dataset.y.ravel()  # Garantir forma correta
+        y = dataset.y.ravel()
         n_samples, n_features = X.shape
 
         self.weights = np.zeros(n_features)
@@ -58,7 +59,9 @@ class Perceptron:
                     self.weights += self.learning_rate * error * X[i]
                     self.bias += self.learning_rate * error
 
-    def predict(self, dataset: Dataset) -> np.ndarray:
+        self._is_fitted = True
+
+    def _predict(self, dataset: Dataset) -> np.ndarray:
         """
         Predicts class labels for the given dataset.
 
@@ -76,20 +79,20 @@ class Perceptron:
         linear_output = np.dot(X, self.weights) + self.bias
         return np.where(linear_output >= 0, 1, 0)
 
-    def score(self, dataset: Dataset) -> float:
+    def _score(self, dataset: Dataset, predictions: np.ndarray) -> float:
         """
         Computes the classification accuracy on a labeled dataset.
 
         Parameters
         ----------
         dataset : Dataset
-            Dataset object containing the feature matrix (X) and true labels (y).
+            Dataset object containing the true labels (y).
+        predictions : np.ndarray
+            Predicted class labels (0 or 1).
 
         Returns
         -------
         float
             Accuracy of the model on the given dataset.
         """
-        y_true = dataset.y
-        y_pred = self.predict(dataset)
-        return accuracy(y_true, y_pred)
+        return accuracy(dataset.y, predictions)
