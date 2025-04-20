@@ -44,6 +44,8 @@ class Perceptron(Model):
         """
         X = dataset.X
         y = dataset.y.ravel()
+        if X.shape[0] == 0 or y.shape[0] == 0:
+            raise ValueError("The Dataset must contain at least one sample.")
         n_samples, n_features = X.shape
 
         self.weights = np.zeros(n_features)
