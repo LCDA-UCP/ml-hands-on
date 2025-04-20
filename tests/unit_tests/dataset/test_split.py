@@ -28,3 +28,19 @@ class TestTrainTestSplit(unittest.TestCase):
 
         np.testing.assert_array_equal(split1[0].X, split2[0].X)
         np.testing.assert_array_equal(split1[1].X, split2[1].X)
+
+    def test_invalid_test_size(self):
+        with self.assertRaises(ValueError):
+            train_test_split(self.dataset, test_size=1.5)
+
+    def test_split_without_labels(self):
+        dataset_no_labels = Dataset(X=self.X)
+        train_ds, test_ds = train_test_split(dataset_no_labels, test_size=0.2, random_state=1)
+
+        self.assertIsNone(train_ds.y)
+        self.assertIsNone(test_ds.y)
+        self.assertEqual(train_ds.X.shape[0], 8)
+        self.assertEqual(test_ds.X.shape[0], 2)
+
+if __name__ == '__main__':
+    unittest.main()

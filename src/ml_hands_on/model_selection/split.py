@@ -25,6 +25,9 @@ def train_test_split(dataset: Dataset, test_size: float=0.2, random_state: int =
                 The testing dataset.
         """
 
+        if not 0 < test_size < 1:
+                raise ValueError("test_size must be between 0 and 1.")
+
         np.random.seed(random_state)
         n_samples = dataset.X.shape[0]
         indices = np.random.permutation(n_samples)
