@@ -3,7 +3,9 @@ import numpy as np
 from ml_hands_on.metrics.mse import mse
 
 
-class TestMSEFunction(unittest.TestCase):
+class Test_MSE(unittest.TestCase):
+
+
     def test_mse_perfect_prediction(self):
         y_true = [1, 2, 3]
         y_pred = [1, 2, 3]
