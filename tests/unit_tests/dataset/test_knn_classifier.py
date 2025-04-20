@@ -39,7 +39,7 @@ class TestKNNClassifier(unittest.TestCase):
         y_test = np.array([1, 0])
         test_dataset = Dataset(X_test, y_test)
 
-        knn = KNNClassifier(k=3)
+        knn = KNNClassifier(k=1)
         knn.fit(dataset)
 
         score = knn.score(test_dataset)

@@ -56,6 +56,8 @@ class KNNRegressor:
                """
         self.dataset = dataset
 
+        return self
+
     def predict(self, dataset: Dataset) -> np.ndarray:
         """
            Predict the class labels for the provided data.
@@ -97,3 +99,18 @@ class KNNRegressor:
         y_pred = self.predict(dataset)
         return rmse(dataset.y, y_pred)
 
+    @staticmethod
+    def euclidean(x1: np.ndarray, x2: np.ndarray) -> float:
+        """
+        Compute the Euclidean distance between two points.
+
+        Parameters
+        ----------
+        x1 : np.ndarray
+        x2 : np.ndarray
+
+        Returns
+        -------
+        distance : float
+        """
+        return np.sqrt(np.sum((x1 - x2) ** 2))
