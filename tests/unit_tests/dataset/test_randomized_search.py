@@ -4,14 +4,13 @@ from scipy.stats import uniform
 
 from ml_hands_on.search.randomized_search import RandomizedSearch
 from ml_hands_on.models.perceptron import Perceptron
-from ml_hands_on.data import Dataset
-from ml_hands_on.metrics import accuracy  # assumindo que já existe
+from ml_hands_on.data.dataset import Dataset
+from ml_hands_on.metrics.accuracy import accuracy
 
 
 class TestRandomizedSearch(unittest.TestCase):
 
     def setUp(self):
-        # Dados para treino e validação (X com 2 features, y binário)
         X_train = np.array([[1, 2], [2, 3], [3, 4]])
         y_train = np.array([0, 1, 1])
         X_val = np.array([[4, 5], [5, 6]])
