@@ -1,5 +1,6 @@
 from ml_hands_on.data.dataset import Dataset
 from ml_hands_on.base.model import Model
+from ml_hands_on.metrics.accuracy import accuracy
 
 import numpy as np
 
@@ -84,7 +85,6 @@ class StackingClassifier(Model):
         """
         y_true = dataset.y
         y_pred = self._predict(dataset)
-        accuracy = np.mean(y_true == y_pred)
-        return accuracy
+        return accuracy(y_true, y_pred)
 
 
