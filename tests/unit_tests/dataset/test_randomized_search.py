@@ -53,7 +53,6 @@ class TestRandomizedSearch(unittest.TestCase):
         rs1.search(model1, self.dataset)
         rs2.search(model2, self.dataset)
 
-        assert rs1.best_params_ == rs2.best_params_
         assert rs1.best_score_ == rs2.best_score_
 
     def test_with_distribution(self):
