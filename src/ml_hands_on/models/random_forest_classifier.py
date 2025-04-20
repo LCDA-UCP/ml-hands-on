@@ -100,6 +100,9 @@ class RandomForestClassifier:
         RandomForestClassifier
             The trained classifier.
         """
+        if self.seed is not None:
+            np.random.seed(self.seed)
+
         self.trees = []
         self.feature_indices = []
 
