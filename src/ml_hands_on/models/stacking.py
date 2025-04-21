@@ -69,7 +69,7 @@ class StackingClassifier(Model):
         meta_dataset = Dataset(X=Z)
         return self.meta_model.predict(meta_dataset)
 
-    def _score(self, dataset: Dataset) -> float:
+    def _score(self, dataset: Dataset,predictions=None) -> float:
         """
         Computes the accuracy of the stacking classifier on the given dataset.
 
@@ -77,6 +77,9 @@ class StackingClassifier(Model):
         ----------
         dataset : Dataset
             Dataset containing the input features (X) and true labels (y).
+            predictions : np.ndarray, optional
+        Precomputed predictions to use for scoring. If None, predictions will be
+        generated using the model's _predict method.
 
         Returns
         -------
@@ -84,7 +87,10 @@ class StackingClassifier(Model):
             Accuracy score (ratio of correct predictions).
         """
         y_true = dataset.y
-        y_pred = self._predict(dataset)
+        if predictions is None:
+            y_pred = self._predict(dataset)
+        else:
+            y_pred = predictions
         return accuracy(y_true, y_pred)
 
 
