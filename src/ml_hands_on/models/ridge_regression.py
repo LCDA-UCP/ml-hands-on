@@ -1,9 +1,11 @@
+from ml_hands_on.base import Model
 from ml_hands_on.metrics.mse import mse
 from ml_hands_on.data.dataset import Dataset
 
 import numpy as np
 
-class RidgeRegression:
+# Should inherit from Model
+class RidgeRegression(Model):
     """
     Ridge Regression model using Gradient Descent and L2 Regularization.
 
@@ -22,6 +24,7 @@ class RidgeRegression:
     """
 
     def __init__(self, l2_penalty=1.0, alpha=0.01, max_iter=1000, patience=10, scale=True):
+        super().__init__()
         self.l2_penalty = l2_penalty
         self.alpha = alpha
         self.max_iter = max_iter
@@ -34,7 +37,7 @@ class RidgeRegression:
         self.std = None
         self.cost_history = {}
 
-    def fit(self, dataset: Dataset):
+    def _fit(self, dataset: Dataset):
         """
         Trains the model using Gradient Descent.
 
@@ -81,7 +84,7 @@ class RidgeRegression:
             if no_improve_counter >= self.patience:
                 break
 
-    def predict(self, dataset: Dataset) -> np.ndarray:
+    def _predict(self, dataset: Dataset) -> np.ndarray:
         """
         Predicts target values using the learned parameters.
 
@@ -100,7 +103,7 @@ class RidgeRegression:
             X = (X - self.mean) / self.std
         return X.dot(self.theta) + self.theta_zero
 
-    def score(self, dataset: Dataset) -> float:
+    def _score(self, dataset: Dataset, predictions: np.ndarray) -> float:
         """
         Computes the Mean Squared Error between true and predicted values.
 
@@ -114,9 +117,7 @@ class RidgeRegression:
         float
             Mean Squared Error.
         """
-        y_true = dataset.y
-        y_pred = self.predict(dataset)
-        return mse(y_true, y_pred)
+        return mse(dataset.y, predictions)
 
     def cost(self, dataset: Dataset) -> float:
         """
@@ -144,6 +145,3 @@ class RidgeRegression:
         l2_term = (self.l2_penalty / (2 * m)) * np.sum(self.theta ** 2)
 
         return mse_value + l2_term
-
-
-
