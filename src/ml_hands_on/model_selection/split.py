@@ -6,24 +6,26 @@ from ml_hands_on.data.dataset import Dataset
 
 def train_test_split(dataset: Dataset, test_size: float=0.2, random_state: int = None) -> Tuple[Dataset, Dataset]:
         """
-            Split arrays or matrices into random train and test subsets.
+        Split arrays or matrices into random train and test subsets.
 
-            Parameters
-            ----------
-            dataset : Dataset
+        Parameters
+        ----------
+        dataset : Dataset
                 The dataset to split.
-            test_size : float, default=0.2
+        test_size : float, default=0.2
                 Proportion of the dataset to include in the test split.
-            random_state : int, optional
+        random_state : int, optional
                 Random seed used to shuffle the data.
 
-            Returns
-            -------
-            train_dataset : Dataset
+        Returns
+        -------
+        train_dataset : Dataset
                 The training dataset.
-            test_dataset : Dataset
+        test_dataset : Dataset
                 The testing dataset.
         """
+        if not 0 < test_size < 1:
+                raise ValueError("test_size must be between 0 and 1.")
 
         np.random.seed(random_state)
         n_samples = dataset.X.shape[0]
