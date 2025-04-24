@@ -1,7 +1,5 @@
 import numpy as np
 
-import numpy as np
-
 def rmse(y_true, y_pred):
     """
        Compute Root Mean Squared Error.
