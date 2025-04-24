@@ -24,18 +24,18 @@ class KNNClassifier:
 
     def __init__(self, k: int = 3, distance=None):
         """
-            Initializes the K-Nearest Neighbors model.
+        Initializes the K-Nearest Neighbors model.
 
-            Parameters
-            ----------
-            k : int, default=3
-                Number of nearest neighbors to consider.
-            distance : callable, optional
-                Distance function that takes two arrays and returns a float. Defaults to Euclidean distance.
-            """
-
-
+        Parameters
+        ----------
+        k : int, default=3
+            Number of nearest neighbors to consider.
+        distance : callable, optional
+            Distance function that takes two arrays and returns a float. Defaults to Euclidean distance.
+        """
         self.k = k
+        # we should have used the metric implemented in the statistics submodule (assignment 3)
+        # however, I will not accept it like this because you did all the assignments at the same time
         self.distance = distance or self.euclidean
         self.dataset = None
 

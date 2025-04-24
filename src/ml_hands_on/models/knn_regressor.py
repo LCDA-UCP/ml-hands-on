@@ -1,4 +1,3 @@
-
 import numpy as np
 from ml_hands_on.data.dataset import Dataset
 from ml_hands_on.models.knn_classifier import KNNClassifier
@@ -25,16 +24,15 @@ class KNNRegressor:
 
     def __init__(self, k: int = 3, distance=None):
         """
-            Initializes the K-Nearest Neighbors model.
+        Initializes the K-Nearest Neighbors model.
 
-            Parameters
-            ----------
-            k : int, default=3
-                Number of nearest neighbors to consider.
-            distance : callable, optional
-                Distance function that takes two arrays and returns a float. Defaults to Euclidean distance.
-            """
-
+        Parameters
+        ----------
+        k : int, default=3
+            Number of nearest neighbors to consider.
+        distance : callable, optional
+            Distance function that takes two arrays and returns a float. Defaults to Euclidean distance.
+        """
         self.k = k
         self.distance = distance or self.euclidean
         self.dataset = None
@@ -55,23 +53,22 @@ class KNNRegressor:
                Fitted estimator.
                """
         self.dataset = dataset
-
         return self
 
     def predict(self, dataset: Dataset) -> np.ndarray:
         """
-           Predict the class labels for the provided data.
+        Predict the class labels for the provided data.
 
-           Parameters
-           ----------
-           dataset : Dataset
-               Dataset with features to predict.
+        Parameters
+        ----------
+        dataset : Dataset
+            Dataset with features to predict.
 
-           Returns
-           -------
-           y_pred : np.ndarray
-               Predicted class labels.
-                       """
+        Returns
+        -------
+        y_pred : np.ndarray
+            Predicted class labels.
+        """
         predictions = []
         for x in dataset.X:
             distances = np.array([self.distance(x, x_train) for x_train in self.dataset.X])
@@ -81,21 +78,19 @@ class KNNRegressor:
         return np.array(predictions).reshape(-1, 1)
 
     def score(self, dataset: Dataset) -> float:
-
         """
-         Return the RMSE on the given test data and labels.
+        Return the RMSE on the given test data and labels.
 
-         Parameters
-         ----------
-         dataset : Dataset
-             Test data with true labels.
+        Parameters
+        ----------
+        dataset : Dataset
+            Test data with true labels.
 
-         Returns
-         -------
-         score : float
-             Root Mean Squared Error.
-         """
-
+        Returns
+        -------
+        score : float
+            Root Mean Squared Error.
+        """
         y_pred = self.predict(dataset)
         return rmse(dataset.y, y_pred)
 
