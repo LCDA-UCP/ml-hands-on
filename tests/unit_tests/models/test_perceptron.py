@@ -17,7 +17,7 @@ class TestPerceptron(unittest.TestCase):
         self.model._fit(self.dataset)
         self.assertTrue(self.model.weights is not None)
         self.assertTrue(self.model.bias is not None)
-        self.assertTrue(self.model._is_fitted)
+        self.assertTrue(self.model.is_fitted)
 
     def test_predict(self):
         self.model._fit(self.dataset)
