@@ -1,10 +1,12 @@
 import numpy as np
+
+from ml_hands_on.base import Model
 from ml_hands_on.data.dataset import Dataset
 from collections import Counter
 from ml_hands_on.metrics.accuracy import accuracy
 
 
-class KNNClassifier:
+class KNNClassifier(Model):
     """
     K-Nearest Neighbors classifier.
 
@@ -23,23 +25,24 @@ class KNNClassifier:
 
 
     def __init__(self, k: int = 3, distance=None):
+        super().__init__()
         """
-            Initializes the K-Nearest Neighbors model.
+        Initializes the K-Nearest Neighbors model.
 
-            Parameters
-            ----------
-            k : int, default=3
-                Number of nearest neighbors to consider.
-            distance : callable, optional
-                Distance function that takes two arrays and returns a float. Defaults to Euclidean distance.
-            """
-
-
+        Parameters
+        ----------
+        k : int, default=3
+            Number of nearest neighbors to consider.
+        distance : callable, optional
+            Distance function that takes two arrays and returns a float. Defaults to Euclidean distance.
+        """
         self.k = k
+        # we should have used the metric implemented in the statistics submodule (assignment 3)
+        # however, I will not accept it like this because you did all the assignments at the same time
         self.distance = distance or self.euclidean
         self.dataset = None
 
-    def fit(self, dataset: Dataset) -> 'KNNClassifier':
+    def _fit(self, dataset: Dataset) -> 'KNNClassifier':
         """
         Fit the model using the training dataset.
 
@@ -56,7 +59,7 @@ class KNNClassifier:
         self.dataset = dataset
         return self
 
-    def predict(self, dataset: Dataset) -> np.ndarray:
+    def _predict(self, dataset: Dataset) -> np.ndarray:
         """
         Predict the class labels for the provided data.
 
@@ -83,7 +86,7 @@ class KNNClassifier:
 
         return np.array(predictions).reshape(-1, 1)
 
-    def score(self, dataset: Dataset) -> float:
+    def _score(self, dataset: Dataset, predictions: np.ndarray) -> float:
         """
         Return the accuracy on the given test data and labels.
 
@@ -97,8 +100,7 @@ class KNNClassifier:
         score : float
             Classification accuracy.
         """
-        y_pred = self.predict(dataset)
-        return accuracy(dataset.y, y_pred)
+        return accuracy(dataset.y, predictions)
 
     @staticmethod
     def euclidean(x1: np.ndarray, x2: np.ndarray) -> float:
