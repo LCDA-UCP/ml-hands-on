@@ -5,7 +5,7 @@ from ml_hands_on.data.dataset import Dataset
 from ml_hands_on.metrics.mse import mse
 
 
-class Test_RidgeRegression(unittest.TestCase):
+class TestRidgeRegression(unittest.TestCase):
 
     def setUp(self):
 
