@@ -1,10 +1,12 @@
 import numpy as np
+
+from ml_hands_on.base import Model
 from ml_hands_on.data.dataset import Dataset
 from ml_hands_on.models.knn_classifier import KNNClassifier
 from ml_hands_on.metrics.rmse import rmse
 
 
-class KNNRegressor:
+class KNNRegressor(Model):
     """
     K-Nearest Neighbors regressor.
 
@@ -33,11 +35,12 @@ class KNNRegressor:
         distance : callable, optional
             Distance function that takes two arrays and returns a float. Defaults to Euclidean distance.
         """
+        super().__init__()
         self.k = k
         self.distance = distance or self.euclidean
         self.dataset = None
 
-    def fit(self, dataset: Dataset) -> 'KNNRegressor':
+    def _fit(self, dataset: Dataset) -> 'KNNRegressor':
 
         """
            Fit the model using the training dataset.
@@ -55,7 +58,7 @@ class KNNRegressor:
         self.dataset = dataset
         return self
 
-    def predict(self, dataset: Dataset) -> np.ndarray:
+    def _predict(self, dataset: Dataset) -> np.ndarray:
         """
         Predict the class labels for the provided data.
 
@@ -77,7 +80,7 @@ class KNNRegressor:
             predictions.append(np.mean(k_values))
         return np.array(predictions).reshape(-1, 1)
 
-    def score(self, dataset: Dataset) -> float:
+    def _score(self, dataset: Dataset, predictions: np.ndarray) -> float:
         """
         Return the RMSE on the given test data and labels.
 
@@ -91,8 +94,7 @@ class KNNRegressor:
         score : float
             Root Mean Squared Error.
         """
-        y_pred = self.predict(dataset)
-        return rmse(dataset.y, y_pred)
+        return rmse(dataset.y, predictions)
 
     @staticmethod
     def euclidean(x1: np.ndarray, x2: np.ndarray) -> float:
