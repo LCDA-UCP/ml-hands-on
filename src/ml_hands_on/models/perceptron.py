@@ -61,8 +61,6 @@ class Perceptron(Model):
                     self.weights += self.learning_rate * error * X[i]
                     self.bias += self.learning_rate * error
 
-        self._is_fitted = True
-
     def _predict(self, dataset: Dataset) -> np.ndarray:
         """
         Predicts class labels for the given dataset.
