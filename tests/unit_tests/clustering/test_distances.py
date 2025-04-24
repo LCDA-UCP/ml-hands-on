@@ -3,7 +3,7 @@ import numpy as np
 from ml_hands_on.statistics.euclidean_distance import euclidean_distance
 from ml_hands_on.statistics.manhattan_distance import manhattan_distance
 
-class test_distances(unittest.TestCase):
+class TestDistances(unittest.TestCase):
 
     def test_euclidean_distance(self):
         x = [0, 0]
