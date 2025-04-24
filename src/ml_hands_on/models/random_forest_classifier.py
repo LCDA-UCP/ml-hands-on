@@ -2,12 +2,13 @@ import numpy as np
 from typing import List, Optional, Literal, Tuple
 from collections import Counter
 
+from ml_hands_on.base import Model
 from ml_hands_on.data import Dataset
 from ml_hands_on.models.decision_tree_classifier import DecisionTreeClassifier
 from ml_hands_on.metrics.accuracy import accuracy
 
 
-class RandomForestClassifier:
+class RandomForestClassifier(Model):
     def __init__(self,
                  n_estimators: int = 10,
                  max_features: Optional[int] = None,
@@ -33,6 +34,7 @@ class RandomForestClassifier:
         seed : Optional[int]
             Seed for reproducibility.
         """
+        super().__init__()
         self.n_estimators = n_estimators
         self.max_features = max_features
         self.min_sample_split = min_sample_split
@@ -46,7 +48,8 @@ class RandomForestClassifier:
         if seed is not None:
             np.random.seed(seed)
 
-    def _bootstrap_sample(self, dataset: Dataset) -> Dataset:
+    @staticmethod
+    def _bootstrap_sample(dataset: Dataset) -> Dataset:
         """
         Performs bootstrap aggregation (bagging) by sampling the dataset with replacement.
 
@@ -86,7 +89,7 @@ class RandomForestClassifier:
         new_dataset = Dataset(new_X, dataset.y, features=new_features, label=dataset.label)
         return new_dataset, selected_indices
 
-    def fit(self, dataset: Dataset) -> 'RandomForestClassifier':
+    def _fit(self, dataset: Dataset) -> 'RandomForestClassifier':
         """
         Trains the random forest classifier using bootstrap and feature bagging.
 
@@ -120,7 +123,8 @@ class RandomForestClassifier:
 
         return self
 
-    def _majority_vote(self, predictions: List) -> int:
+    @staticmethod
+    def _majority_vote(predictions: List) -> int:
         """
         Aggregates predictions using majority voting.
 
@@ -136,7 +140,7 @@ class RandomForestClassifier:
         """
         return Counter(predictions).most_common(1)[0][0]
 
-    def predict(self, dataset: Dataset) -> np.ndarray:
+    def _predict(self, dataset: Dataset) -> np.ndarray:
         """
         Predicts class labels for the input dataset using the trained forest.
 
@@ -161,7 +165,7 @@ class RandomForestClassifier:
         final_preds = [self._majority_vote(row) for row in all_preds]
         return np.array(final_preds)
 
-    def score(self, dataset: Dataset) -> float:
+    def _score(self, dataset: Dataset, predictions: np.ndarray) -> float:
         """
         Computes the accuracy score of the classifier on the provided dataset.
 
@@ -175,5 +179,4 @@ class RandomForestClassifier:
         float
             Accuracy of the model.
         """
-        preds = self.predict(dataset)
-        return accuracy(dataset.y, preds)
+        return accuracy(dataset.y, predictions)
