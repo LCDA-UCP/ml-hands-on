@@ -27,7 +27,7 @@ class DummyClassifier(Model):
 
 
 
-class Test_StackingClassifier(unittest.TestCase):
+class TestStackingClassifier(unittest.TestCase):
 
     def setUp(self):
 
