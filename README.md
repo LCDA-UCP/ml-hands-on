@@ -7,46 +7,48 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 
 ## Syllabus
 
-| **Module** | **Topic**                                | **Lecture**                                                                     | **Exercises**                                                                      |
-|------------|------------------------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| 1          | Course Introduction + Introduction to ML | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session01) | -                                                                                  |
-| 2          | Data Preprocessing                       | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session02) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session02) |
-| 3          | Introduction to Git                      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session03) | -                                                                                  |
-| 4          | Data Scaling and Feature Selection       | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session04) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session04) |
-| 5          | Clustering                               | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session05) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session05) |
-| 6          | Practical Session                        | -                                                                               | [assignments #1, #2 and #3](https://github.com/LCDA-UCP/ml-hands-on/issues)        |
-| 7          | Dimensionality Reduction                 | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session07) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session07) |
-| 8          | Introduction to Supervised Learning      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session08) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session08) |
-| 9          | Instance-based and Probabilistic Models  | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session09) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session09) |
-| 10         | Linear Models                            | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session10) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session10) |
-| 11         | Tree-based Models - Part 1               | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session11) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session11) |
-| 12         | Tree-based Models - Part 2               | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session12) | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session12) |
-| 13         | Practical Session                        | -                                                                               | [assignments #4, #5 and #6](https://github.com/LCDA-UCP/ml-hands-on/issues)        |
-| 14         | Support Vector Machines - Part 1         | -                                                                               | -                                                                                  |
-| 15         | Support Vector Machines - Part 2         | -                                                                               | -                                                                                  |
-| 16         | Support Vector Machines - Part 3         | -                                                                               | -                                                                                  |
-| 17         | Neural Networks                          | -                                                                               | -                                                                                  |
-| 18         | Ensemble Learning                        | -                                                                               | -                                                                                  |
-| 19         | Hyperparameter Optimization              | -                                                                               | -                                                                                  |
-| 20         | Practical Session                        | -                                                                               | -                                                                                  |
-| 21         | Data Imbalance                           | -                                                                               | -                                                                                  |
-| 22         | Exam Revisions                           | -                                                                               | -                                                                                  |
-| 23         | Exam                                     | -                                                                               | -                                                                                  |
-| 24         | Exam Correction                          | -                                                                               | -                                                                                  |
-| 25         | Assignment Presentations                 | -                                                                               | -                                                                                  |
-| 26         | Explainable AI                           | -                                                                               | -                                                                                  |
-| 27         | Multitask and Multilabel Learning        | -                                                                               | -                                                                                  |
+| **Module** | **Topic**                                       | **Lecture**                                                                             | **Exercises**                                                                      |
+|------------|-------------------------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| 1          | Course Introduction + Introduction to ML        | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session01)         | -                                                                                  |
+| 2          | Data Preprocessing                              | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session02)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session02) |
+| 3          | Introduction to Git                             | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session03)         | -                                                                                  |
+| 4          | Data Scaling and Feature Selection              | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session04)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session04) |
+| 5          | Clustering                                      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session05)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session05) |
+| 6          | Practical Session                               | -                                                                                       | [assignments #1, #2 and #3](https://github.com/LCDA-UCP/ml-hands-on/issues)        |
+| 7          | Dimensionality Reduction                        | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session07)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session07) |
+| 8          | Introduction to Supervised Learning             | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session08)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session08) |
+| 9          | Instance-based and Probabilistic Models         | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session09)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session09) |
+| 10         | Linear Models                                   | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session10)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session10) |
+| 11         | Tree-based Models - Part 1                      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session11)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session11) |
+| 12         | Tree-based Models - Part 2                      | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session12)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session12) |
+| 13         | Practical Session                               | -                                                                                       | [assignments #4, #5 and #6](https://github.com/LCDA-UCP/ml-hands-on/issues)        |
+| 14         | Support Vector Machines - Part 1                | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session14)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session14) |
+| 15         | Support Vector Machines - Part 2                | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session15)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session15) |
+| 16         | Support Vector Machines - Part 3                | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session16)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session16) |
+| 17         | Neural Networks                                 | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session17)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session17) |
+| 18         | Ensemble Learning + Hyperparameter Optimization | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session18)         | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session18) |
+| 19         | Exam Revisions                                  | [2023/2024 exams](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session19) | -                                                                                  |
+| 20         | Exam                                            | -                                                                                       | -                                                                                  |
+| 21         | Exam Correction                                 | -                                                                                       | -                                                                                  |
+| 22         | Data Imbalance                                  | -                                                                                       | -                                                                                  |
+| 23         | Assignment Presentations                        | -                                                                                       | -                                                                                  |
+| 24         | Explainable AI                                  | -                                                                                       | -                                                                                  |
+| 25         | Multitask and Multilabel Learning               | -                                                                                       | -                                                                                  |
+| 26         | AutoML + Model Deployment and Monitoring        | -                                                                                       | -                                                                                  |
 
 ## ML Package Challenges
 
-| **Issue**                                              | **Topic**             | **Development**   | **Testing**       | **Review**        |
-|--------------------------------------------------------|-----------------------|-------------------|-------------------|-------------------|
-| [#1](https://github.com/LCDA-UCP/ml-hands-on/issues/1) | Data Management + I/O | @cleopatra-santos | @Dacni            | @D1ana-bd         |
-| [#2](https://github.com/LCDA-UCP/ml-hands-on/issues/2) | Feature Selection     | @D1ana-bd         | @cleopatra-santos | @Dacni            |
-| [#3](https://github.com/LCDA-UCP/ml-hands-on/issues/3) | Clustering            | @Dacni            | @D1ana-bd         | @cleopatra-santos |
-| [#4](https://github.com/LCDA-UCP/ml-hands-on/issues/4) | KNN                   | @cleopatra-santos | @Dacni            | @D1ana-bd         |
-| [#5](https://github.com/LCDA-UCP/ml-hands-on/issues/5) | Linear Models         | @D1ana-bd         | @cleopatra-santos | @Dacni            |
-| [#6](https://github.com/LCDA-UCP/ml-hands-on/issues/7) | Tree-based Models     | @Dacni            | @D1ana-bd         | @cleopatra-santos |
+| **Issue**                                                | **Topic**             | **Development** | **Testing**    | **Review** |
+|----------------------------------------------------------|-----------------------|-------------|----------------|-------|
+| [#1](https://github.com/LCDA-UCP/ml-hands-on/issues/1)   | Data Management + I/O | @cleopatra-santos | @Dacni         | @D1ana-bd |
+| [#2](https://github.com/LCDA-UCP/ml-hands-on/issues/2)   | Feature Selection     | @D1ana-bd   | @cleopatra-santos | @Dacni |
+| [#3](https://github.com/LCDA-UCP/ml-hands-on/issues/3)   | Clustering            | @Dacni      | @D1ana-bd      | @cleopatra-santos |
+| [#4](https://github.com/LCDA-UCP/ml-hands-on/issues/4)   | KNN                   | @cleopatra-santos | @Dacni         | @D1ana-bd |
+| [#5](https://github.com/LCDA-UCP/ml-hands-on/issues/5)   | Linear Models         | @D1ana-bd   | @cleopatra-santos | @Dacni |
+| [#6](https://github.com/LCDA-UCP/ml-hands-on/issues/7)   | Tree-based Models     | @Dacni      | @D1ana-bd      | @cleopatra-santos |
+| [#7](https://github.com/LCDA-UCP/ml-hands-on/issues/11)  | Perceptron Model      | @cleopatra-santos     | @Dacni     | @D1ana-bd |
+| [#8](https://github.com/LCDA-UCP/ml-hands-on/issues/12)  | Stacking Classifier   | @D1ana-bd            | @cleopatra-santos         | @Dacni |
+| [#9](https://github.com/LCDA-UCP/ml-hands-on/issues/13)  | Randomized Search     | @Dacni      | @D1ana-bd      | @cleopatra-santos |
 
 ## Important Dates
 
