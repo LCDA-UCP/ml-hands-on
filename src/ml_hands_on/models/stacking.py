@@ -17,6 +17,7 @@ class StackingClassifier(Model):
     """
 
     def __init__(self, base_models: list, meta_model: Model):
+        super().__init__()
         self.base_models = base_models
         self.meta_model = meta_model
 
@@ -69,7 +70,7 @@ class StackingClassifier(Model):
         meta_dataset = Dataset(X=Z)
         return self.meta_model.predict(meta_dataset)
 
-    def _score(self, dataset: Dataset,predictions=None) -> float:
+    def _score(self, dataset: Dataset, predictions: np.ndarray = None) -> float:
         """
         Computes the accuracy of the stacking classifier on the given dataset.
 
@@ -92,5 +93,3 @@ class StackingClassifier(Model):
         else:
             y_pred = predictions
         return accuracy(y_true, y_pred)
-
-
