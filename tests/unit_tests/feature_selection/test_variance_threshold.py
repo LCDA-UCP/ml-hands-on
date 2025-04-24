@@ -1,12 +1,11 @@
 import unittest
 import numpy as np
-import pandas as pd
 
 from ml_hands_on import VarianceThreshold
 from ml_hands_on.data import Dataset
 
 
-class  test_varience_threshold(unittest.TestCase):
+class  TestVarianceThreshold(unittest.TestCase):
 
         def test_fit(self):
 
