@@ -33,8 +33,8 @@ Machine Learning, Degree in Applied Data Science, Catholic University of Portuga
 | 22         | Data Imbalance                                  | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session22)                   | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session22) |
 | 23         | Assignment Presentations                        | -                                                                                                 | -                                                                                  |
 | 24         | Explainable AI                                  | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session24)                   | [exercises](https://github.com/LCDA-UCP/ml-hands-on/tree/main/exercises/session24) |
-| 25         | Multitask and Multilabel Learning               | -                                                                                                 | -                                                                                  |
-| 26         | AutoML + Model Deployment and Monitoring        | -                                                                                                 | -                                                                                  |
+| 25         | Multitask and Multilabel Learning               | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session25)                   | -                                                                                  |
+| 26         | AutoML + Model Deployment and Monitoring        | [lecture](https://github.com/LCDA-UCP/ml-hands-on/tree/main/lectures/session26)                   | -                                                                                  |
 
 ## ML Package Challenges
 
